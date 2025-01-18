@@ -636,6 +636,28 @@ body.nav-active { overflow: hidden; }
 
 .social-link { color: var(--text-white); }
 
+.skill-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-end: 30px 12px;
+}
+
+.skill-wrapper .span {
+  font-family: var(--fontFamily-recoleta);
+  font-weight: var(--weight-medium);
+}
+
+.progress-bar {
+  background-color: var(--bg-smoky-black);
+  height: 5px;
+}
+
+.progress-fill {
+  background-color: var(--bg-white);
+  height: 100%;
+}
+
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
