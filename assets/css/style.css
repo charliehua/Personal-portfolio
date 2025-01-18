@@ -589,9 +589,52 @@ body.nav-active { overflow: hidden; }
   #ABOUT
 \*-----------------------------------*/
 
+.tab-container { border: 1px solid var(--border-eerie-black); }
 
+.tab-btn {
+  width: 100%;
+  padding-block: 16px;
+  border-block-end: 1px solid var(--border-eerie-black);
+  transition: var(--transition-1);
+}
 
+.tab-btn:is(:hover, :focus-visible, .active) { background: var(--bg-eerie-black); }
 
+.tab-content {
+  display: none;
+  padding: 30px;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fade 500ms linear forwards;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; } 
+}
+
+.tab-content .grid-list {
+  display: grid;
+  gap: 30px;
+}
+
+.tab-content .section-title { margin-block-end: 30px; }
+
+.tab-content .section-text { margin-block-end: 20px; }
+
+.about-item:not(:last-child) { margin-block-end: 20px; }
+
+.about-item .span { line-height: 1.4; }
+
+.social-list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-link { color: var(--text-white); }
 
 /*-----------------------------------*\
   #CTA
