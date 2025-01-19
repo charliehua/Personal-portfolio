@@ -115,7 +115,7 @@ window.addEventListener("mousemove", function (event) {
     cursors[0].style.left = `${posX}px`;
     cursors[0].style.top = `${posY}px`;
 
-    setTimeout(function() {
+    setTimeout(function () {
         cursors[1].style.left = `${posX}px`;
         cursors[1].style.top = `${posY}px`;
     }, 80);
@@ -123,14 +123,14 @@ window.addEventListener("mousemove", function (event) {
 
 // hovered effect
 
-addEventOnElements(hoveredElements, "mouseover", function() {
-    for(let i = 0, len = cursors.length; i < len; i++) {
+addEventOnElements(hoveredElements, "mouseover", function () {
+    for (let i = 0, len = cursors.length; i < len; i++) {
         cursors[i].classList.add("hovered");
     }
 });
 
-addEventOnElements(hoveredElements, "mouseout", function() {
-    for(let i = 0, len = cursors.length; i < len; i++) {
+addEventOnElements(hoveredElements, "mouseout", function () {
+    for (let i = 0, len = cursors.length; i < len; i++) {
         cursors[i].classList.remove("hovered");
     }
 })
