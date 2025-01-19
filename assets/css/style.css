@@ -739,6 +739,7 @@ body.nav-active { overflow: hidden; }
   left: 50%;
   transform: translate(-50%, -100%);
   min-width: max-content;
+  opacity: 0;
   transition: var(--transition-2);
 }
 
@@ -801,8 +802,20 @@ body.nav-active { overflow: hidden; }
   #FOOTER
 \*-----------------------------------*/
 
+.footer { border-block-start: 1px solid var(--border-eerie-black); }
+.footer .container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+}
 
-
+.back-top-btn .span { display: none; }
+.back-top-btn {
+  color: var(--text-white);
+  padding: 32px 16px;
+  border-inline: 1px solid var(--border-eerie-black);
+}
 
 
 /*-----------------------------------*\
