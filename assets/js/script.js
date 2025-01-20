@@ -235,3 +235,4 @@ scroller.addEventListener('mousemove', (e) => {
     const walk = (y - startY) * 1.5; // Scroll sensitivity
     scroller.scrollTop = scrollTop - walk;
 });
+

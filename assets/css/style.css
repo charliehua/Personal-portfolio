@@ -887,7 +887,6 @@ body.nav-active {
 /*-----------------------------------*\
   #PROJECT
 \*-----------------------------------*/
-
 .section.project {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -956,7 +955,7 @@ body.nav-active {
   align-items: flex-start;
   gap: 30px;
   overflow: auto;
-  scroll-snap-type: inline mandatory;
+  /* scroll-snap-type: inline mandatory; */
   padding-block-end: 5px;
   scroll-behavior: smooth;
   cursor: grab;
