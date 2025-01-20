@@ -123,24 +123,43 @@ document.addEventListener("DOMContentLoaded", function () {
     let startX;
     let scrollLeft;
 
+    // Function to disable text selection globally
+    const disableTextSelection = () => {
+        document.body.style.userSelect = "none";
+    };
+
+    // Function to enable text selection globally
+    const enableTextSelection = () => {
+        document.body.style.userSelect = "";
+    };
+
     // Mouse down event
     sliderList.addEventListener("mousedown", (e) => {
         isDragging = true;
         sliderList.classList.add("active");
         startX = e.pageX - sliderList.offsetLeft;
         scrollLeft = sliderList.scrollLeft;
+        
+        // Disable text selection
+        disableTextSelection();
     });
 
     // Mouse leave event
     sliderList.addEventListener("mouseleave", () => {
         isDragging = false;
         sliderList.classList.remove("active");
+
+        // Re-enable text selection
+        enableTextSelection();
     });
 
     // Mouse up event
     sliderList.addEventListener("mouseup", () => {
         isDragging = false;
         sliderList.classList.remove("active");
+        
+        // Re-enable text selection
+        enableTextSelection();
     });
 
     // Mouse move event
