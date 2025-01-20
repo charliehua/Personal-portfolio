@@ -888,6 +888,15 @@ body.nav-active {
   #PROJECT
 \*-----------------------------------*/
 
+.section.project {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height of the viewport */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent scrollbars if items overflow */
+}
+
 .project-card .card-banner::before {
   top: 0;
   left: 0;
@@ -951,6 +960,8 @@ body.nav-active {
   padding-block-end: 5px;
   scroll-behavior: smooth;
   cursor: grab;
+  width: 80%;
+  max-width: 1200px;
 }
 
 .slider-item:active {
