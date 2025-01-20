@@ -813,6 +813,60 @@ body.nav-active {
   height: 100%;
 }
 
+.resume-container {
+  width: 100%;
+  padding: 0px 10px;
+}
+
+.resume-row .resume-column:not(:first-child) {
+  margin-top: 30px;
+}
+
+main.resume-row {
+  display: grid;
+  grid-template-columns: 1fr;  
+  grid-column-gap: 20px;
+}
+
+.resume-column header.title {
+  font-family: var(--fontFamily-recoleta);
+  padding: 0px 0px 20px 30px;
+}
+
+.resume-column .resume-contents {
+  padding: 0px 30px;
+  border-left: 2px solid #bababa;
+}
+
+.resume-column .resume-contents .box {
+  position: relative; 
+  padding: 20px;
+  background-color: var(--bg-eerie-black);
+  margin-bottom: 20px;
+}
+
+.resume-column .resume-contents .box::before {
+  content: ""; 
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  left: -39px;
+  top: -4px;
+  background-color: #11a372;
+  border: 2px solid white;
+}
+
+.resume-column .resume-contents .box.btn\:hover:is(:hover, :focus-visible)::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.resume-column .resume-contents .box.btn\:hover:is(:hover, :focus-visible)::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
 /* .interview-card {
   position: relative;
 }
@@ -1128,6 +1182,17 @@ body.nav-active {
   /* REUSED STYLE */
   .container {
     max-width: 720px;
+  }
+
+  main.resume-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resume-row .resume-column:not(:first-child) {
+    margin-top: 0px;
+  }
+  .resume-row .resume-column {
+    margin-bottom: 30px;
   }
 
   /* HERO */
