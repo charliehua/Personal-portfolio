@@ -330,6 +330,12 @@ body.nav-active {
   overflow-x: hidden;
 }
 
+.arrow-icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+}
+
 /*-----------------------------------*\
   #PRELOADER
 \*-----------------------------------*/
@@ -755,8 +761,24 @@ body.nav-active {
   margin-block-end: 20px;
 }
 
-.about-item .span {
+.about-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-item .title {
   line-height: 1.4;
+  flex-basis: 100%;
+}
+
+.about-item .social-list {
+  flex-basis: 100%;
+}
+
+.about-item .social-list img {
+  height: 30px;
+  width: 30px;
 }
 
 .social-list {
@@ -1054,7 +1076,7 @@ body.nav-active {
   }
 
   .about-list {
-    display: grid;
+    display: column;
     grid-template-columns: 1fr 1fr;
   }
 
