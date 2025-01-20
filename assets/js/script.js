@@ -203,3 +203,35 @@ addEventOnElements(hoveredElements, "mouseout", function () {
         cursors[i].classList.remove("hovered");
     }
 })
+
+const scroller = document.querySelector('.scroller');
+const scrollerList = document.querySelector('.scroller-list');
+
+let isDragging = false;
+let startY;
+let scrollTop;
+
+scroller.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.pageY - scroller.offsetTop;
+    scrollTop = scroller.scrollTop;
+    scroller.style.cursor = 'grabbing';
+});
+
+scroller.addEventListener('mouseleave', () => {
+    isDragging = false;
+    scroller.style.cursor = 'grab';
+});
+
+scroller.addEventListener('mouseup', () => {
+    isDragging = false;
+    scroller.style.cursor = 'grab';
+});
+
+scroller.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const y = e.pageY - scroller.offsetTop;
+    const walk = (y - startY) * 1.5; // Scroll sensitivity
+    scroller.scrollTop = scrollTop - walk;
+});

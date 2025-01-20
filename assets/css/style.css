@@ -284,6 +284,10 @@ body.nav-active {
   font-size: var(--fontSize-3);
 }
 
+.h2.title {
+  font-size: var(--fontSize-4);
+}
+
 .h3 {
   font-size: var(--fontSize-4);
 }
@@ -602,6 +606,47 @@ body.nav-active {
 .hero .shape-2 {
   top: 180px;
   left: 0;
+}
+
+.scroller{
+  width: 100%;
+  height: var(--height);
+  overflow: hidden;
+  overflow-y: scroll;
+  mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 20%, /* Increased transparency at the top */
+      rgba(0, 0, 0, 1) 40%, /* Opaque in the middle */
+      rgba(0, 0, 0, 1) 60%, /* Opaque in the middle */
+      rgba(0, 0, 0, 0) 80%  /* Increased transparency at the bottom */
+  );
+  position: relative;
+  user-select: none;
+}
+
+.scroller .scroller-list{
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; Add spacing between items */
+  position: relative;
+  height: auto; /* Adjust height to fit content */
+  margin: 0;
+  transition: transform 0.2s ease; /* Smooth transition */
+}
+.scroller .scroller-list .scroller-item{
+  width: 100%;
+  height: auto;
+  padding: 10px; /* Add padding for spacing */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.scroller .scroller-list .scroller-item h2{
+  width: 100%;
+  text-align: left;
+  margin: 0;
 }
 
 /*-----------------------------------*\
@@ -1204,6 +1249,10 @@ body.nav-active {
 
   .hero .btn {
     flex-shrink: 0;
+  }
+
+  .h2.title {
+    font-size: var(--fontSize-3);
   }
 
   /* SERVICE */
