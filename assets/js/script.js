@@ -76,6 +76,10 @@ addEventOnElements(tiltElements, "mouseout", function () {
     this.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`
 })
 
+/**
+ * navbar links to about me section
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
     // Function to activate a tab
     function activateTab(targetTab) {
@@ -105,6 +109,47 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             activateTab(this.dataset.tabBtn);
         });
+    });
+});
+
+/**
+ * draggable projects 
+ */
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sliderList = document.querySelector(".slider-list");
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    // Mouse down event
+    sliderList.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        sliderList.classList.add("active");
+        startX = e.pageX - sliderList.offsetLeft;
+        scrollLeft = sliderList.scrollLeft;
+    });
+
+    // Mouse leave event
+    sliderList.addEventListener("mouseleave", () => {
+        isDragging = false;
+        sliderList.classList.remove("active");
+    });
+
+    // Mouse up event
+    sliderList.addEventListener("mouseup", () => {
+        isDragging = false;
+        sliderList.classList.remove("active");
+    });
+
+    // Mouse move event
+    sliderList.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - sliderList.offsetLeft;
+        const walk = (x - startX) * 2; // Adjust scrolling speed
+        sliderList.scrollLeft = scrollLeft - walk;
     });
 });
 

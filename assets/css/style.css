@@ -882,6 +882,12 @@ body.nav-active {
   overflow: auto;
   scroll-snap-type: inline mandatory;
   padding-block-end: 5px;
+  scroll-behavior: smooth;
+  cursor: grab;
+}
+
+.slider-item:active {
+  cursor: grabbing;
 }
 
 .slider-list::-webkit-scrollbar {
