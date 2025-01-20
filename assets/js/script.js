@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /**
- * draggable projects 
+ * draggable projects section
  */
 
 document.addEventListener("DOMContentLoaded", function () {
