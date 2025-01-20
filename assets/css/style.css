@@ -609,7 +609,7 @@ body.nav-active {
 \*-----------------------------------*/
 
 
-.service {
+/* .service {
   border-block-start: 1px solid var(--border-eerie-black);
   margin-block-start: var(--section-spacing);
 }
@@ -653,7 +653,7 @@ body.nav-active {
 
 .service-card:is(:hover, :focus-visible) .card-icon {
   opacity: 0;
-}
+} */
 
 
 /*-----------------------------------*\
@@ -746,7 +746,7 @@ body.nav-active {
   height: 100%;
 }
 
-.interview-card {
+/* .interview-card {
   position: relative;
 }
 
@@ -790,13 +790,13 @@ body.nav-active {
   color: var(--bg-smoky-black);
   display: grid;
   place-items: center;
-}
+} */
 
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
 
-.cta {
+/* .cta {
   border-block: 1px solid var(--border-eerie-black);
 }
 
@@ -815,7 +815,7 @@ body.nav-active {
   margin-inline: auto;
   margin-block-start: 30px;
 
-}
+} */
 
 /*-----------------------------------*\
   #PROJECT
@@ -933,8 +933,6 @@ body.nav-active {
 .cursor-outline {
   display: none;
 }
-
-
 
 /*-----------------------------------*\
   #MEDIA QUERIES
@@ -1249,8 +1247,6 @@ body.nav-active {
     margin: 0;
   }
 
-
-
   /**
     * PROJECTS
     */
@@ -1258,7 +1254,6 @@ body.nav-active {
   .slider-item {
     min-width: calc(33.33% - 20px);
   }
-
 
   /**
    * BACK TO TOP
@@ -1273,7 +1268,6 @@ body.nav-active {
     align-items: center;
     gap: 10px;
   }
-
 }
 
 /* responsiveness for larger than 1200px screen */
@@ -1298,8 +1292,6 @@ body.nav-active {
 
   }
 
-
-
   /**
    * REUSED STYLE
    */
@@ -1312,8 +1304,6 @@ body.nav-active {
   .h1 {
     line-height: 1.1;
   }
-
-
 
   /**
    * HEADER
@@ -1331,8 +1321,6 @@ body.nav-active {
     gap: 50px;
   }
 
-
-
   /**
    * HERO
    */
@@ -1348,8 +1336,6 @@ body.nav-active {
   .hero-text {
     max-width: 30ch;
   }
-
-
 
   /**
    * ABOUT
@@ -1380,8 +1366,6 @@ body.nav-active {
     max-width: 1320px;
   }
 
-
-
   /**
    * HEADER
    */
@@ -1389,8 +1373,6 @@ body.nav-active {
   .header {
     padding-inline: 90px;
   }
-
-
 
   /**
    * HERO
