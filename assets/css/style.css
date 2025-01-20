@@ -959,8 +959,21 @@ body.nav-active {
   padding-block-end: 5px;
   scroll-behavior: smooth;
   cursor: grab;
-  width: 80%;
-  max-width: 1200px;
+  max-width: 1400px;
+  mask-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 5%, /* Increased transparency at the top */
+      rgba(0, 0, 0, 1) 10%, /* Opaque in the middle */
+      rgba(0, 0, 0, 1) 90%, /* Opaque in the middle */
+      rgba(0, 0, 0, 0) 95%  /* Increased transparency at the bottom */
+  );
+}
+
+.slider-item.blank {
+  width: 100px;
+  height: 1px;
+  min-width: 20%;
+  max-width: 30%;
 }
 
 .slider-item:active {
@@ -972,7 +985,7 @@ body.nav-active {
 }
 
 .slider-item {
-  min-width: 100%;
+  min-width: 70%;
   scroll-snap-align: start;
 }
 
@@ -1180,6 +1193,7 @@ body.nav-active {
   .slider-item {
     min-width: calc(50% - 15px);
   }
+
 
   /* CUSTOM CURSOR */
   .cursor-dot,
