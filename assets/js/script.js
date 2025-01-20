@@ -76,32 +76,37 @@ addEventOnElements(tiltElements, "mouseout", function () {
     this.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`
 })
 
-/**
- * Tab content
- */
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to activate a tab
+    function activateTab(targetTab) {
+        // Deactivate all tabs and buttons
+        document.querySelectorAll(".tab-content, .tab-btn").forEach(el => el.classList.remove("active"));
 
-const tabBtns = document.querySelectorAll("[data-tab-btn]");
-const tabContents = document.querySelectorAll("[data-tab-content]");
-
-let lastActiveTabBtn = tabBtns[0];
-let lastActiveTabContent = tabContents[0];
-
-const filterContent = function () {
-    if (!(lastActiveTabBtn === this)) {
-        lastActiveTabBtn.classList.remove("active");
-        lastActiveTabContent.classList.remove("active");
-
-        this.classList.add("active");
-        lastActiveTabBtn = this;
-
-        const currentTabContent = document.querySelector(`[data-tab-content="${this.dataset.tabBtn}"]`);
-
-        currentTabContent.classList.add("active");
-        lastActiveTabContent = currentTabContent;
+        // Activate the target tab and corresponding button
+        document.querySelector(`[data-tab-content="${targetTab}"]`).classList.add("active");
+        document.querySelector(`[data-tab-btn="${targetTab}"]`).classList.add("active");
     }
-}
 
-addEventOnElements(tabBtns, "click", filterContent);
+    // Handle navbar links for "About" and "Resume"
+    document.querySelectorAll('a[data-target-tab]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Scroll to the "About Me" section
+            document.querySelector("#About").scrollIntoView({ behavior: "smooth" });
+
+            // Activate the target tab
+            activateTab(this.dataset.targetTab);
+        });
+    });
+
+    // Handle tab buttons within the "About Me" section
+    document.querySelectorAll(".tab-btn").forEach(button => {
+        button.addEventListener("click", function () {
+            activateTab(this.dataset.tabBtn);
+        });
+    });
+});
 
 // CUSTOM CURSOR
 
