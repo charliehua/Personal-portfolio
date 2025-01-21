@@ -974,6 +974,8 @@ main.resume-row {
   height: 80vh; /* Full height of the viewport */
   box-sizing: border-box;
   overflow: hidden; /* Prevent scrollbars if items overflow */
+  padding-top: 200px;
+  padding-bottom: 100px;
 }
 
 .section.project .title {
@@ -1043,6 +1045,7 @@ main.resume-row {
   justify-content: center;
   gap: 8px;
   padding-inline: 10px;
+  margin-bottom: 50px;
   min-width: auto; /* Prevents the button from stretching */
 }
 
