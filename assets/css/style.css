@@ -329,7 +329,7 @@ body.nav-active {
 }
 
 .section {
-  padding-block: var(--section-spacing);
+  padding-top: var(--section-spacing);
   overflow-x: hidden;
 }
 
@@ -975,9 +975,25 @@ main.resume-row {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  height: 100vh; /* Full height of the viewport */
+  height: 80vh; /* Full height of the viewport */
   box-sizing: border-box;
   overflow: hidden; /* Prevent scrollbars if items overflow */
+}
+
+.section.project .title {
+  text-align: center;
+  color: var(--text-white); /* Keep the color consistent */
+  margin: 0 auto 30px; /* Center it and add spacing below */
+  font-size: var(--fontSize-3); /* Adjust font size */
+  font-family: var(--fontFamily-recoleta); /* Use your existing font */
+  max-width: fit-content; /* Prevent stretching */
+  position: relative; /* Reset potential offset issues */
+  display: block;
+}
+
+.section.project .container {
+  text-align: center; /* Center contents */
+  margin: 0 auto; /* Center the container */
 }
 
 .project-card .card-banner::before {
