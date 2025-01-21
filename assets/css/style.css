@@ -23,6 +23,7 @@
   --bg-rich-black-fogra-29: hsla(229, 23%, 9%, 1);
   --bg-smoky-black: hsla(0, 0%, 6%, 1);
   --bg-black: hsla(0, 0%, 0%, 1);
+  --bg-soft-blue: hsla(220, 90%, 70%, 1);
 
   /* GRADIENT COLOURS */
   --gradient-1: linear-gradient(to top, var(--bg-black) 0%, transparent 40%);
@@ -34,6 +35,7 @@
   --text-rich-black-fogra-29: hsla(216, 42%, 12%, 1);
   --text-smoky-black: hsla(0, 0%, 6%, 1);
   --text-black: hsla(0, 0%, 0%, 1);
+  --text-soft-blue: hsla(220, 90%, 70%, 1);
 
   /* Border color */
   --border-white: hsla(0, 0%, 100%, 1);
@@ -41,6 +43,7 @@
   --border-gainsboro: hsla(220, 13%, 91%, 1);
   --border-eerie-black: hsla(0, 0%, 13%, 1);
   --border-smoky-black: hsla(0, 0%, 6%, 1);
+  --border-soft-blue: hsla(220, 90%, 70%, 1);
 
   /**
    * TYPOGRAPHY
@@ -817,15 +820,36 @@ body.nav-active {
   width: 100%;
   padding: 0px 10px;
 }
+.resume-contents .box h3 {
+  margin-top: -10px;
+  font-family: var(--fontFamily-recoleta);
+}
+
+.resume-contents .box h4 {
+  font-weight: var(--weight-regular);
+  font-style: italic;
+}
+
+.resume-contents .box h5 {
+padding-left: 10px;
+}
 
 .resume-row .resume-column:not(:first-child) {
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 main.resume-row {
   display: grid;
-  grid-template-columns: 1fr;  
-  grid-column-gap: 20px;
+  grid-template-columns: 1fr; /* Default single-column layout for small screens */
+  grid-template-rows: auto auto auto; /* Three rows, one for each section */
+  gap: 20px;
+}
+
+.section-1,
+.section-2,
+.section-3 {
+  grid-column: 1; /* All sections span the single column by default */
+  grid-row: auto; /* Each section in its own row */
 }
 
 .resume-column header.title {
@@ -835,7 +859,7 @@ main.resume-row {
 
 .resume-column .resume-contents {
   padding: 0px 30px;
-  border-left: 2px solid #bababa;
+  border-left: 2px solid var(--bg-light-gray);
 }
 
 .resume-column .resume-contents .box {
@@ -848,13 +872,13 @@ main.resume-row {
 .resume-column .resume-contents .box::before {
   content: ""; 
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  left: -39px;
+  left: -41px;
   top: -4px;
-  background-color: #11a372;
-  border: 2px solid white;
+  background-color: var(--bg-eerie-black);
+  border: 3px solid var(--bg-light-gray);
 }
 
 .resume-column .resume-contents .box.btn\:hover:is(:hover, :focus-visible)::before {
@@ -865,6 +889,12 @@ main.resume-row {
 .resume-column .resume-contents .box.btn\:hover:is(:hover, :focus-visible)::after {
   transform: scale(1);
   opacity: 1;
+}
+
+.resume-contents .box ul li {
+  list-style-type: disc;
+  margin-block-start: 10px;
+  margin-inline-start: 20px;
 }
 
 /* .interview-card {
@@ -1184,17 +1214,6 @@ main.resume-row {
     max-width: 720px;
   }
 
-  main.resume-row {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .resume-row .resume-column:not(:first-child) {
-    margin-top: 0px;
-  }
-  .resume-row .resume-column {
-    margin-bottom: 30px;
-  }
-
   /* HERO */
   .hero {
     text-align: left;
@@ -1364,6 +1383,34 @@ main.resume-row {
 
   .h2.title {
     font-size: var(--fontSize-3);
+  }
+
+  main.resume-row {
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    grid-template-rows: auto auto; /* Two rows */
+    gap: 30px; /* Increased spacing for larger screens */
+  }
+
+  .section-1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .section-2 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .section-3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .resume-row .resume-column:not(:first-child) {
+    margin-top: 0px;
+  }
+  .resume-row .resume-column {
+    /* margin-bottom: 30px; */
   }
 
   /* SERVICE */
