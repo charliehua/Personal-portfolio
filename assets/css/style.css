@@ -834,10 +834,6 @@ body.nav-active {
 padding-left: 10px;
 }
 
-.resume-row .resume-column:not(:first-child) {
-  /* margin-top: 30px; */
-}
-
 main.resume-row {
   display: grid;
   grid-template-columns: 1fr; /* Default single-column layout for small screens */
@@ -983,7 +979,7 @@ main.resume-row {
 .section.project .title {
   text-align: center;
   color: var(--text-white); /* Keep the color consistent */
-  margin: 0 auto 30px; /* Center it and add spacing below */
+  margin: 0 auto 20px; /* Center it and add spacing below */
   font-size: var(--fontSize-3); /* Adjust font size */
   font-family: var(--fontFamily-recoleta); /* Use your existing font */
   max-width: fit-content; /* Prevent stretching */
@@ -1001,15 +997,15 @@ main.resume-row {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: var(--bg-rich-black-fogra-29);
+  /* background-color: var(--bg-rich-black-fogra-29);
   background-image: var(--gradient-2);
-  opacity: 0;
+  opacity: 0; */
   transition: var(--transition-1);
 }
 
-.project-card .card-banner:is(:hover, :focus-within)::before {
+/* .project-card .card-banner:is(:hover, :focus-within)::before {
   opacity: 0.9;
-}
+} */
 
 .project-card .btn {
   position: absolute;
@@ -1021,20 +1017,40 @@ main.resume-row {
   transition: var(--transition-2);
 }
 
-.project-card .card-banner:is(:hover, :focus-within) .btn {
+/* .project-card .card-banner:is(:hover, :focus-within) .btn {
   transform: translate(-50%, -50%);
   opacity: 1;
-}
+} */
 
 .project-card .card-content {
-  padding: 24px 30px 0;
+  padding: 24px 10px 0;
+  display: flex; /* Enables flexbox for alignment */
+  flex-direction: column; /* Stacks elements vertically */
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content vertically if needed */
 }
 
 .project-card .card-subtitle {
-  font-size: var(--fontSize-10);
-  text-transform: uppercase;
+  /* font-size: var(--fontSize-10); */
+  font-weight: var(--weight-regular);
+  /* text-transform: uppercase; */
   letter-spacing: 2px;
-  margin-block-end: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: var(--bg-eerie-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-inline: 10px;
+  min-width: auto; /* Prevents the button from stretching */
+}
+
+.card-subtitle img {
+  display: inline-block; /* Ensures the image is treated like text */
+  height: 16px; /* Set height */
+  width: 16px; /* Set width */
+  object-fit: contain; /* Prevents distortion */
 }
 
 .project-card .card-title {
@@ -1424,9 +1440,6 @@ main.resume-row {
 
   .resume-row .resume-column:not(:first-child) {
     margin-top: 0px;
-  }
-  .resume-row .resume-column {
-    /* margin-bottom: 30px; */
   }
 
   /* SERVICE */
