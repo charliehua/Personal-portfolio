@@ -1114,6 +1114,7 @@ main.resume-row {
 
 .footer {
   border-block-start: 1px solid var(--border-eerie-black);
+  position: relative;
 }
 
 .footer .container {
@@ -1227,6 +1228,43 @@ main.resume-row {
     margin-inline: auto;
   }
 
+}
+
+@media (max-width: 768px) {
+  .slider-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap if they exceed the container width */
+    justify-content: center; /* Center items within the container */
+    gap: 20px; /* Add spacing between items */
+    padding: 20px;
+}
+
+.slider-item {
+    flex: 1 1 30%; /* Adjust size of each item relative to the container */
+    max-width: 300px; /* Prevent items from becoming too wide */
+    margin-bottom: 20px; /* Space below each item */
+}
+
+  .section.project .container {
+    position: relative; /* Ensure the container is correctly positioned within the section */
+    margin: 0 auto;
+    margin-block: auto;
+    min-height: 100vh;
+    
+  }
+  
+  .section.project {
+    display: flex;
+    flex-direction: column; /* Ensure items stack vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Ensure section spans the full viewport height */
+    padding: 50px 0; /* Add some padding to avoid tight spacing */
+    padding-top: 200px;
+    box-sizing: border-box; /* Include padding in height calculation */
+    overflow: scroll; /* Prevent content overflow */
+    scrollbar-width: none;
+  }
 }
 
 /* responsiveness for larger than 768px screen */
